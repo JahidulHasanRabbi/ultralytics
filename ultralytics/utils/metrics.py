@@ -310,7 +310,7 @@ class ConfusionMatrix:
         ax.set_ylabel('Predicted')
         ax.set_title(title)
         plot_fname = Path(save_dir) / f'{title.lower().replace(" ", "_")}.png'
-        fig.savefig(plot_fname, dpi=250)
+        fig.savefig(plot_fname, dpi=1200)
         plt.close(fig)
         if on_plot:
             on_plot(plot_fname)
@@ -348,7 +348,7 @@ def plot_pr_curve(px, py, ap, save_dir=Path('pr_curve.png'), names=(), on_plot=N
     ax.set_ylim(0, 1)
     ax.legend(bbox_to_anchor=(1.04, 1), loc='upper left')
     ax.set_title('Precision-Recall Curve')
-    fig.savefig(save_dir, dpi=250)
+    fig.savefig(save_dir, dpi=1200)
     plt.close(fig)
     if on_plot:
         on_plot(save_dir)
@@ -373,7 +373,7 @@ def plot_mc_curve(px, py, save_dir=Path('mc_curve.png'), names=(), xlabel='Confi
     ax.set_ylim(0, 1)
     ax.legend(bbox_to_anchor=(1.04, 1), loc='upper left')
     ax.set_title(f'{ylabel}-Confidence Curve')
-    fig.savefig(save_dir, dpi=250)
+    fig.savefig(save_dir, dpi=1200)
     plt.close(fig)
     if on_plot:
         on_plot(save_dir)
